@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import ErrorBoundaryClass from './components/ErrorBoundary';
+import NumGenerator from './components/NumGenerator';
 
 function App() {
+  var [num,setNum]=useState(0)
+  const clickHandler =()=>{
+    var n = Math.floor(Math.random()*10)
+    setNum(n)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>1. Random number generation using class components</h2>
+      <ErrorBoundaryClass generator={clickHandler} num={num}>
+        <NumGenerator generator={clickHandler} num={num}/>
+      </ErrorBoundaryClass>
     </div>
   );
 }
