@@ -15,7 +15,7 @@ export class NumGenerator extends Component<numProps> {
   render() {
     return (
     <div>
-      <label>{this.props.num}</label><br/>
+      <h4>{this.props.num}</h4>
       <button onClick={this.props.generator}>Number Generator</button>
     </div>
     )

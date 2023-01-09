@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+
+.errorDiv {
+  height: 100px;
+  width: 70%;
+  border: 1px solid grey;
+  margin: auto;
+}

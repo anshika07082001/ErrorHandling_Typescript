@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 
 type errorProps = {
-    children:React.ReactNode,
-    generator:()=> void,
-    num:number
+  children:React.ReactNode,
+  generator:()=> void,
+  num:number
 }
 
 type IState = {
-    hasError:boolean
+  hasError:boolean
 }
 
 export class ErrorBoundaryClass extends Component <errorProps,IState> {
@@ -33,10 +33,10 @@ export class ErrorBoundaryClass extends Component <errorProps,IState> {
   render() {
     if(this.state.hasError){
         return <>
-        <h1>Something went wrong</h1>
+        <h4>Number less than 5!!</h4>
         <button onClick={()=>{this.setState({hasError:false},()=>this.props.generator())}}>Reset</button>
         </>;   
-}
+    }
     return this.props.children
   }
 }
